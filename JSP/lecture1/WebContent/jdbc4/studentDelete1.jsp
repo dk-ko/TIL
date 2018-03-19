@@ -3,8 +3,9 @@
 <%
 String s1 = request.getParameter("id");
 int id = Integer.parseInt(s1);
-String pg = request.getParameter("pg");
-
+String pg = request.getParameter("pg");%>
+<% System.out.println("id :"+id); %>
+<%
 StudentDAO.delete(id);
 response.sendRedirect("studentList1.jsp?pg="+pg);
 %>
