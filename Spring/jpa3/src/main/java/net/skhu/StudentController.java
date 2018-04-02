@@ -1,6 +1,7 @@
 package net.skhu;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,7 +27,7 @@ public class StudentController {
     @RequestMapping(value="edit", method=RequestMethod.GET)
     public String edit(@RequestParam("id") int id, Pagination pagination, Model model) {
         model.addAttribute("departments", departmentRepository.findAll());
-        model.addAttribute("student", studentRepository.findById(id));
+        model.addAttribute("student", studentRepository.findById(id).orElse(new Student()));
         model.addAttribute("title", "수정");
         return "student/edit";
     }
