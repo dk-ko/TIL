@@ -8,6 +8,7 @@
 <h1>jpa3</h1>
 
 <a href="student/list">student/list</a> <br />
+<a href="mybatis/cacheTest">mybatis/cacheTest</a><br/>
 
 </body>
 </html>

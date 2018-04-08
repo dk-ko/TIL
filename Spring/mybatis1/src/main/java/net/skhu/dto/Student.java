@@ -1,11 +1,18 @@
 package net.skhu.dto;
-public class Student {
+
+import java.io.Serializable;
+import java.util.Date;
+
+public class Student implements Serializable{
+	private static final long serialVersionUID = 1L;
+	
     int id;
     String studentNumber;
     String name;
     int departmentId;
     int year;
     String departmentName;
+    Date time;
 
     public int getId() {
         return id;
@@ -53,5 +60,13 @@ public class Student {
 
     public void setDepartmentName(String departmentName) {
         this.departmentName = departmentName;
+    }
+    
+    public Date getTime() {
+    		return time;
+    }
+    
+    public void setTime(Date time) {
+    		this.time = time;
     }
 }
