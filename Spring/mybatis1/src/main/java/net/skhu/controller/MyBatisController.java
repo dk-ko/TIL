@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import net.skhu.dto.Department;
+import net.skhu.dto.Student;
 import net.skhu.mapper.DepartmentMapper;
 import net.skhu.mapper.StudentMapper;
 
@@ -31,5 +32,16 @@ public class MyBatisController {
 	public String cache(Model model, Department department) {
 		departmentMapper.update(department);
 		return "redirect:cacheTest";
+	}
+	
+	@RequestMapping("departmentList1")
+	public String departmentList1(Model model) {
+		List<Department> departments = departmentMapper.findAll();
+		for(Department department : departments) {
+			List<Student> students = studentMapper.findByDepartmentId(department.getId());
+			department.setStudents(students);
+		}
+		model.addAttribute("departments",departments);
+		return "mybatis/departmentList";
 	}
 }
