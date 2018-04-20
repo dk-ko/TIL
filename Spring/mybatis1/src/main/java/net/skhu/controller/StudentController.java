@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,6 +15,7 @@ import net.skhu.dto.Department;
 import net.skhu.dto.Student;
 import net.skhu.mapper.DepartmentMapper;
 import net.skhu.mapper.StudentMapper;
+import net.skhu.mapper.RegisterMapper;
 
 @Controller
 @RequestMapping("/student")
@@ -20,6 +23,7 @@ public class StudentController {
 
     @Autowired StudentMapper studentMapper;
     @Autowired DepartmentMapper departmentMapper;
+    @Autowired RegisterMapper registerMapper;
 
     @RequestMapping("list")
     public String list(Model model) {
@@ -59,8 +63,10 @@ public class StudentController {
     }
 
     @RequestMapping("delete")
+    @Transactional(propagation=Propagation.REQUIRED, rollbackFor = Exception.class)
     public String delete(Model model, @RequestParam("id") int id) {
-        studentMapper.delete(id);
+    		registerMapper.deleteByStudentId(id);
+    		studentMapper.delete(id);
         return "redirect:list";
     }
 }
