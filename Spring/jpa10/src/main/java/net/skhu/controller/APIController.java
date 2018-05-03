@@ -24,7 +24,7 @@ public class APIController {
 		return employeeRepository.findAll();
 	}
 	
-	@RequestMapping("employees/{id}")
+	@RequestMapping("employee/{id}")
 	public Optional<Employee> student(@PathVariable("id") int id) {
 		return employeeRepository.findById(id);
 	}

@@ -10,13 +10,12 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Employee {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
+	@GeneratedValue(strategy=GenerationType.IDENTITY)	
 	int id;
 	String name;
 	
 	@ManyToOne
-	@JoinColumn
+	@JoinColumn(name="departmentId")
 	Department department;
 
 	public int getId() {
