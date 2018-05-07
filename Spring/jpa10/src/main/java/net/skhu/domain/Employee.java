@@ -1,6 +1,7 @@
 package net.skhu.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,11 +16,11 @@ public class Employee {
 	int id;
 	String name;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="departmentId")
 	Department department;
 	
-	@OneToOne(mappedBy="employee")
+	@OneToOne(mappedBy="employee", fetch = FetchType.EAGER)
 	Address address;
 
 	public Address getAddress() {

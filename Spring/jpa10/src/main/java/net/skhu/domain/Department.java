@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,7 +20,7 @@ public class Department {
 	String name;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy="department")
+	@OneToMany(mappedBy="department", fetch = FetchType.LAZY)
 	List<Employee> employees;
 	
 	public int getId() {

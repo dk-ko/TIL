@@ -1,6 +1,7 @@
 package net.skhu.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,7 +19,7 @@ public class Address {
 	String address;
 	
 	@JsonIgnore
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="employeeId")
 	Employee employee;
 
