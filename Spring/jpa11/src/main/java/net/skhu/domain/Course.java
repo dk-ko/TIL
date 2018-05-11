@@ -20,8 +20,8 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 @Data
-@ToString(exclude= {"registrations","professor","department"})
-@EqualsAndHashCode(exclude= {"registrations", "professor","department"})
+@ToString(exclude= {"department","professor","registrations"})
+@EqualsAndHashCode(exclude= {"department","professor","registrations"})
 @Entity
 public class Course {
 	@Id
