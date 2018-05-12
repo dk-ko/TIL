@@ -59,4 +59,19 @@ public class APIController {
 			list.add(r.getCourse());
 		return list;
 	}
+	
+	@RequestMapping("test/{n}")
+	public List<Student> test(@PathVariable("n") int n){
+		List<Student> list = null;
+		switch(n) {
+		case 1: list = studentRepository.findByName("고은"); break;
+		case 2: list = studentRepository.findByNameStartsWith("김"); break;
+		case 3: list = studentRepository.findByDepartmentName("국어국문학"); break;
+		case 4: list = studentRepository.findByDepartmentNameStartsWith("국어"); break;
+		case 5: list = studentRepository.findAllByOrderByName(); break;
+		case 6: list = studentRepository.findAllByOrderByNameDesc(); break;
+		case 7: list = studentRepository.findByDepartmentIdOrderByNameDesc(1); break;
+		}
+		return list;
+	}
 }
