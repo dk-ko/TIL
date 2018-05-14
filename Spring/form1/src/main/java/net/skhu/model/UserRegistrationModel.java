@@ -11,10 +11,11 @@ import net.skhu.domain.User;
 @SuppressWarnings("deprecation")
 @Data
 public class UserRegistrationModel {
-	@NotEmpty @Size(min=3, max=12)
+	@NotEmpty(message="학번을 입력하세요.") 
+	@Size(min=3, max=12)
 	String userid;
 	
-	@NotEmpty @Size(min=6, max=12)
+	@NotEmpty @Size(min=6, max=12, message="6 자리 이상 12 자리 이하이어야 합니다.")
 	String passwd1;
 	
 	String passwd2;
