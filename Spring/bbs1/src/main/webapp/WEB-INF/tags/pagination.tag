@@ -1,8 +1,7 @@
 <%@ tag description="pagination" pageEncoding="UTF-8"%>
 <%@ tag import="java.util.ArrayList" %>
-<%@ attribute name="recordCount" type="java.lang.Integer" required="true" %>
 <%@ attribute name="pageSize" type="java.lang.Integer" required="true" %>
-<%@ attribute name="queryStringName" type="java.lang.String" required="true" %>
+<%@ attribute name="recordCount" type="java.lang.Integer" required="true" %>
 <%! 
 private class Page { 
     int page; 
@@ -14,27 +13,25 @@ private class Page {
     }
 } 
 %>
-
 <%
 int recordCount = (Integer)jspContext.getAttribute("recordCount");
 int pageSize = (Integer)jspContext.getAttribute("pageSize");
-String name = (String)jspContext.getAttribute("queryStringName");
 
 int currentPage = 1;
-if (request.getParameter(name) != null)
-    currentPage = Integer.parseInt(request.getParameter(name));
+if (request.getParameter("pg") != null)
+    currentPage = Integer.parseInt(request.getParameter("pg"));
 
 int pageCount = recordCount / pageSize;
 if (pageCount * pageSize < recordCount) ++pageCount;
 
 String queryString = request.getQueryString();
 if (queryString == null)
-    queryString = name + "=@@@";
-else if (queryString.matches(".*" + name + "=[0-9]+.*"))
-    queryString = queryString.replaceAll(name + "=[0-9]+", name + "=@@@");
+    queryString = "pg=@@@";
+else if (queryString.matches(".*pg=[0-9]+.*"))
+    queryString = queryString.replaceAll("pg=[0-9]+", "pg=@@@");
 else
-    queryString = queryString + "&" + name + "=@@@";
-String url = request.getRequestURI() + "?" + queryString;
+    queryString = queryString + "&pg=@@@";
+String url = request.getAttribute("javax.servlet.forward.request_uri") + "?" + queryString;
 
 if (currentPage > pageCount) currentPage = pageCount;
 int base = ((currentPage - 1) / 10) * 10;
