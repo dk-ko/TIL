@@ -24,7 +24,13 @@ import net.skhu.repository.UploadedFileRepository;
 public class FileController {
 	@Autowired UploadedFileRepository uploadedFileRepository;
 	
-	@RequestMapping({"/", "file/list"})
+	@RequestMapping("/")
+	public String index(Model model) {
+		model.addAttribute("currentTime", new Date());
+		return "file/index";
+	}
+	
+	@RequestMapping("file/list")
 	public String list(Model model) {
 		System.out.println("control");
 		model.addAttribute("files", uploadedFileRepository.findAll());

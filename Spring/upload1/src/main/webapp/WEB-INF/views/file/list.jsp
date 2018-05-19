@@ -12,7 +12,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="container">
+
+<div id="fileList">
 	<h1>파일 업로드 테스트</h1>
 	
 	<table class="table table-bordered table-condensed" style="width:auto">
@@ -37,5 +38,12 @@
 		<button type="submit" class="btn btn-primary">업로드</button>
 	</form>
 </div>
+
+<script>
+	if (parent) {
+		var h = $("div#fileList").height() + 100;
+		parent.setIframeHeight(h);
+	}
+</script>
 </body>
 </html>
