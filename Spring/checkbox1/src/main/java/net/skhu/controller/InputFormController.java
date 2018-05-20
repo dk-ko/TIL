@@ -74,7 +74,7 @@ public class InputFormController {
 	public String inputForm3(Model model, InputFormModel inputFormModel) {
 		System.out.println("input3 post");
 		model.addAttribute("options", options);
-		return "inpurForm3";
+		return "inputForm3";
 	}
 	
 }
