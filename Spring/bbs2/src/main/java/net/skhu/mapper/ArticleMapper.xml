@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+       "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.skhu.mapper.ArticleMapper">
+
+	<select id="findOne" resultType="Article">
+		SELECT a.*, u.name userName
+		FROM article a LEFT JOIN user u ON a.userId = u.id;
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findAll" resultType="Article">
+		<bind name="start" value="(pg - 1) *sz"/>
+		SELECT a.*, u.name userName
+		FROM article a LEFT JOIN user u ON a.userId = u.id
+		WHERE a.boardId = #{bd}
+			<if test="sb == 1"> AND u.name=#{st}</if>
+			<if test="sb == 2"> AND INSTR(a.title, #{st}) > 0</if>
+			<if test="sb == 3"> AND INSTR(a.body, #{st}) > 0</if>
+		ORDER BY
+			<choose>
+				<when test="ob == 1">a.id</when>
+				<when test="ob == 2">u.name</when>
+				<otherwise>a.id DESC</otherwise>
+			</choose>
+		LIMIT ${start}, ${sz}
+	</select>
+	
+	<select id="count" resultType="int">
+		SELECT COUNT(a.id)
+		FROM article a LEFT JOIN user u ON a.userId = u.id
+		WHERE a.boardId = #{bd}
+			<if test="sb == 1">AND u.name = #{st}</if>
+			<if test="sb == 2">AND INSTR(a.title, #{st}) > 0</if>
+			<if test="sb == 3">AND INSTR(a.body, #{st}) > 0</if>
+	</select>
+	
+	<select id="findTopByBoardIdOrderByNoDesc" resultType="Article">
+		SELECT * FROM article
+		WHERE boardId = #{boardId}
+		ORDER BY no DESC
+		LIMIT 0,1
+	</select>
+	
+	<delete id="delete">
+		DELETE FROM article WHERE id = #{id}
+	</delete>
+	
+	<update id="update">
+		UPDATE article
+			SET title = #{title}
+			body = #{body}
+			writeTime = NOW()
+		WHERE id = #{id}
+	</update>
+	
+	<insert id = "insert">
+		INSERT article (no, writeTime, title, body, boardId, userId)
+		VALUES (#{no}, NOW(), #{title}, #{body}, #{boardId}, #{userId})
+	</insert>
+
+</mapper>
