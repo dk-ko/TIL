@@ -37,8 +37,10 @@
 		<span>${ article.userName }</span>
 		
 		<span>글쓴시각:</span>
-		<span><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${article.writeTiem }"/></span>
+		<span><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${article.writeTime }"/></span>
 	</div>
+	<hr/>
+	<div id="body">${ article.body }</div>
 	<hr/>
 	<div id="buttons">
 		<a class="btn btn-primary" href="edit?id=${article.id }&${pagination.queryString}">

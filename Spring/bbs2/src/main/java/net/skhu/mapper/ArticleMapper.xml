@@ -6,7 +6,7 @@
 
 	<select id="findOne" resultType="Article">
 		SELECT a.*, u.name userName
-		FROM article a LEFT JOIN user u ON a.userId = u.id;
+		FROM article a LEFT JOIN user u ON a.userId = u.id
 		WHERE a.id = #{id}
 	</select>
 	
@@ -49,8 +49,8 @@
 	
 	<update id="update">
 		UPDATE article
-			SET title = #{title}
-			body = #{body}
+			SET title = #{title},
+			body = #{body},
 			writeTime = NOW()
 		WHERE id = #{id}
 	</update>

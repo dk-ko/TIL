@@ -72,7 +72,7 @@ public class ArticleController {
 			return "article/edit";
 		}
 		int id=articleService.insertArticle(a, pagination.getBd(), 1);
-		return "redirect:view?id" + id + "&" + pagination.getQueryString();
+		return "redirect:view?id=" + id + "&" + pagination.getQueryString();
 	}
 	
 	@RequestMapping(value="delete", method=RequestMethod.GET)
