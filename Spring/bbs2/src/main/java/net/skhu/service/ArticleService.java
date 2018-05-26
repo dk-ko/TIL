@@ -33,6 +33,7 @@ public class ArticleService {
 	public int insertArticle(ArticleModel a, int boardId, int userId) {
 		Article last = articleMapper.findTopByBoardIdOrderByNoDesc(boardId);
 		int no = (last == null) ? 1: last.getNo() + 1;
+		System.out.println(no);
 		
 		Article article = new Article();
 		article.setBoardId(boardId);
@@ -42,6 +43,7 @@ public class ArticleService {
 		article.setTitle(a.getTitle());
 		article.setBody(a.getBody());
 		articleMapper.insert(article);
+		System.out.println(article.getId());
 		return article.getId();
 	}
 	

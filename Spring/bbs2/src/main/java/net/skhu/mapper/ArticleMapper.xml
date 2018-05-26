@@ -55,7 +55,7 @@
 		WHERE id = #{id}
 	</update>
 	
-	<insert id = "insert">
+	<insert id = "insert" useGeneratedKeys="true" keyProperty="id">
 		INSERT article (no, writeTime, title, body, boardId, userId)
 		VALUES (#{no}, NOW(), #{title}, #{body}, #{boardId}, #{userId})
 	</insert>

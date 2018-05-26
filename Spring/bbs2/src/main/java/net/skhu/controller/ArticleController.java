@@ -72,6 +72,8 @@ public class ArticleController {
 			return "article/edit";
 		}
 		int id=articleService.insertArticle(a, pagination.getBd(), 1);
+		model.addAttribute("board", boardMapper.findOne(pagination.getBd()));
+		model.addAttribute("articleModel", a);
 		return "redirect:view?id=" + id + "&" + pagination.getQueryString();
 	}
 	
