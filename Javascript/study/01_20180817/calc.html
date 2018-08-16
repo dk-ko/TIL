@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<script language="javascript">
+    var num="";
+    var op="";
+
+    function result(rt){
+        var dis = document.getElementById("display").value;
+
+        if (op=='+'){
+            alert(rt+" "+dis)
+            add(rt,dis)
+        }else if (op='-'){
+            sub(num,dis)
+        }else if (op='*'){
+            mul(num,dis)
+        }else if (op='/'){
+            div(num,dis)
+        }else if (o='%'){
+            mod(num,dis)
+        }
+    }
+
+    function add(a,b){
+        document.getElementById("display").value = a+b;
+    }
+    function sub(a,b){
+        document.getElementById("display").value = a-b;
+    }
+    function mul(a,b){
+        document.getElementById("display").value = a*b;
+    }
+    function dic(a,b){
+        document.getElementById("display").value = a/b;
+    }
+    function mod(a,b){
+        document.getElementById("display").value = a%b;
+    }
+
+    function calc(oper){
+        var v1=num;
+        num="";
+        op=oper;
+    }
+
+    function inputNum(n){
+        num += n;
+        document.getElementById("display").value = num;
+    }
+
+    function clearDisplay(){
+        num = "";
+        op = "";
+        document.getElementById("display").value="0";
+    }
+</script>
+<body>
+    <div>
+        <div class="calc-header">
+            <input type="text" id="display" value="0" readonly="readonly">
+        </div>
+        <div class="calc-body">
+            <div>
+                <table>
+                    <tbody>
+                        <tr class="number">
+                            <td><input type="button" value="c" onclick="clearDisplay()"></td>
+                            <td></td>
+                            <td><input type="button" value="%" onclick="calc('%')"></td>
+                            <td><input type="button" value="/" onclick="calc('/')"></td>
+                        </tr>
+                        <tr class="number">
+                            <td><input type="button" value="7" onclick="inputNum('7')"></td>
+                            <td><input type="button" value="8" onclick="inputNum('8')"></td>
+                            <td><input type="button" value="9" onclick="inputNum('9')"></td>
+                            <td><input type="button" value="*" onclick="calc('*')"></td>
+                        </tr>
+                        <tr class="number">
+                            <td><input type="button" value="4" onclick="inputNum('4')"></td>
+                            <td><input type="button" value="5" onclick="inputNum('5')"></td>
+                            <td><input type="button" value="6" onclick="inputNum('6')"></td>
+                            <td><input type="button" value="-" onclick="calc('-')"></td>
+                        </tr>
+                        <tr class="number">
+                            <td><input type="button" value="1" onclick="inputNum('1')"></td>
+                            <td><input type="button" value="2" onclick="inputNum('2')"></td>
+                            <td><input type="button" value="3" onclick="inputNum('3')"></td>
+                            <td><input type="button" value="+" onclick="calc('+')"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><input type="button" value="0" onclick="inputNum('0')"></td>
+                            <td><input type="button" value="=" onclick="result(num)"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
