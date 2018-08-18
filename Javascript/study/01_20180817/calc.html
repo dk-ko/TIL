@@ -9,55 +9,69 @@
     <script src="main.js"></script>
 </head>
 <script language="javascript">
-    var num="";
+    var first="";
+    var second="";
     var op="";
 
-    function result(rt){
-        var dis = document.getElementById("display").value;
-
-        if (op=='+'){
-            alert(rt+" "+dis)
-            add(rt,dis)
-        }else if (op='-'){
-            sub(num,dis)
-        }else if (op='*'){
-            mul(num,dis)
-        }else if (op='/'){
-            div(num,dis)
-        }else if (o='%'){
-            mod(num,dis)
-        }
-    }
-
     function add(a,b){
-        document.getElementById("display").value = a+b;
+        document.getElementById("display").value = parseInt(a)+parseInt(b);
+        return parseInt(a)+parseInt(b);
     }
     function sub(a,b){
-        document.getElementById("display").value = a-b;
+        document.getElementById("display").value = parseInt(a)-parseInt(b);
+        return parseInt(a)-parseInt(b);
     }
     function mul(a,b){
-        document.getElementById("display").value = a*b;
+        document.getElementById("display").value = parseInt(a)*parseInt(b);
+        return parseInt(a)*parseInt(b);
     }
-    function dic(a,b){
-        document.getElementById("display").value = a/b;
+    function div(a,b){
+        document.getElementById("display").value = parseInt(a)/parseInt(b);
+        return parseInt(a)/parseInt(b);
     }
     function mod(a,b){
-        document.getElementById("display").value = a%b;
+        document.getElementById("display").value = parseInt(a)%parseInt(b);
+        return parseInt(a)%parseInt(b);
+    }
+
+    function result(){
+        
+        if (op=='+'){
+            r = add(second,first)
+        }else if (op=='-'){
+            r = sub(second,first)
+        }else if (op=='*'){
+            r = mul(second,first)
+        }else if (op=='/'){
+            r = div(second,first)
+        }else if (op=='%'){
+            r = mod(second,first)
+        }
+
+        alert(second+" "+op+" "+first+" "+r)
+        second=r;
+        first="";
+        op="";
     }
 
     function calc(oper){
-        var v1=num;
-        num="";
+        if(second==""){
+            second=first;
+            first="";
+        }else{
+            first="";
+        }
         op=oper;
     }
 
     function inputNum(n){
-        num += n;
-        document.getElementById("display").value = num;
+        first += n;
+        document.getElementById("display").value = first;
     }
 
     function clearDisplay(){
-        num = "";
+        first = "";
+        second = "";
         op = "";
         document.getElementById("display").value="0";
     }
@@ -97,7 +111,7 @@
                         </tr>
                         <tr>
                             <td colspan="3"><input type="button" value="0" onclick="inputNum('0')"></td>
-                            <td><input type="button" value="=" onclick="result(num)"></td>
+                            <td><input type="button" value="=" onclick="result()"></td>
                         </tr>
                     </tbody>
                 </table>
