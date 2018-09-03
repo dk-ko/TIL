@@ -55,13 +55,17 @@
     }
 
     function calc(oper){
+        
         if(second==""){
             second=first;
             first="";
+            op=oper;
         }else{
-            first="";
+            op=oper;
+            result();
+            alert(second+" "+op+" "+first+" "+r)
         }
-        op=oper;
+        
     }
 
     function inputNum(n){
