@@ -7,6 +7,7 @@ Today I Learned
 > 2018.1 ~ 2018.2
 
 - 연습 코드
+- 2018-2 SKHU Java Project
 
 ## JSP  
 > 2018.2 ~ 2018.3
@@ -32,7 +33,7 @@ Today I Learned
 - NettyOioServer
 
 ## Docker  
-> 2018.7 ~ 진행 중 
+> 2018.7 ~ 진행 중
 
 - Dockerfile
 - Docker Monitoring
@@ -42,3 +43,9 @@ Today I Learned
 
 - [생활 코딩](https://opentutorials.org/course/3085) 연습 코드
 - Calculator
+
+## Junit
+> 2018.9 ~ 진행 중
+
+- CalculatorTest
+- StringCalculatorTest & Refactoring
