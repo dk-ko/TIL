@@ -27,7 +27,22 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public void add_delimiter() throws Exception {
+	public void add_delimeter() throws Exception {
 		assertEquals(3, cal.add("1,2"));
+	}
+	
+	@Test
+	public void add_rest_or_colon_delimeter() throws Exception {
+		assertEquals(6, cal.add("1,2:3"));
+	}
+	
+	@Test
+	public void add_custom_delimeter() throws Exception {
+		assertEquals(6, cal.add("//;\n1;2;3"));
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void add_negative() throws Exception {
+		cal.add("-1,2,3");
 	}
 }
