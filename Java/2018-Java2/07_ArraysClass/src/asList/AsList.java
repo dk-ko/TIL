@@ -1,4 +1,4 @@
-package arrays;
+package asList;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,5 +24,9 @@ public class AsList {
 		// [one, two, three]
 		List<String> stringList = Arrays.asList("one", "two", "three");
 		System.out.println(stringList);
+		
+		for(String s : stringList){
+			System.out.println(s);
+		}
 	}
 }
