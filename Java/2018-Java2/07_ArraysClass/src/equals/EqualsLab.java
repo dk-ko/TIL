@@ -13,7 +13,7 @@ public class EqualsLab {
 		System.out.println(a.equals(b)); // false
 		System.out.println(Arrays.equals(a, b)); // true
 		
-		System.out.println(Arrays.deepEquals(a, b));
+		System.out.println(Arrays.deepEquals(a, b)); // true
 		
 		// 2차원 배열 
 		int[][] list = new int[3][5];

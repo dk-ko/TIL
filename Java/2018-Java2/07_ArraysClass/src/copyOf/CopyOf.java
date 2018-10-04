@@ -25,6 +25,7 @@ public class CopyOf {
 			System.out.print(i+" ");
 		}
 		
+		System.out.println();
 		int[] test = Arrays.copyOfRange(a, 0, 3);
 		for(int i: test)
 			System.out.print(i+" ");

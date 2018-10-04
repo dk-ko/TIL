@@ -9,6 +9,13 @@ public class StringClassLab3 {
 
 	static Random random = new Random();
 	
+	static ArrayList<Integer> makeIntegerArray(int count){
+		ArrayList<Integer> l = new ArrayList<Integer>();
+		for(int i=0; i<count; i++)
+			l.add(new Integer(random.nextInt(count)));
+		return l;
+	}
+	
 	static <T> void printList(ArrayList<T> a){
 		System.out.println();
 		for(T t:a)
@@ -17,12 +24,10 @@ public class StringClassLab3 {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ArrayList<Integer> a = new ArrayList<Integer>();
-		// list = makeRandomList(list);
-		for(int i=0;i<5;i++)
-			a.add(random.nextInt(5));
+		ArrayList<Integer> a = makeIntegerArray(5);
 		
 		printList(a);
+		
 		// 일반 정렬 
 		Collections.sort(a);
 		printList(a);
@@ -42,7 +47,7 @@ public class StringClassLab3 {
 		printList(a);
 		
 		// Binary Search
-		Integer search = 10;
+		Integer search = 3;
 		int index = Collections.binarySearch(a, search, comp);
 		System.out.printf("\nindex : %d",index);
 		if(index < 0){
