@@ -6,7 +6,7 @@ public class PersonComparator implements Comparator<Person>{
 	// 비교 방법이 여러개라면 따로 클래스를 구성하는게 낫다.
 	// 비교하는 경우 Comparator interface를 implements해 구현하는 것이 바람직.
 	// java 표준라이브러리에 이미 구현된 정렬 메소드나 이진 탐색 메소드에서 객체를 비교할 때
-	// Comparator Interface를 구현한 클래스 객체를 요구하기 때
+	// Comparator Interface를 구현한 클래스 객체를 요구하기 때문 
 	
 	public enum Compare { BY_NAME_ASC, BY_NAME_DESC, BY_AGE_ASC, BY_AGE_DESC};
 	private Compare compare;
