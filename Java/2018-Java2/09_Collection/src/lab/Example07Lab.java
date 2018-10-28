@@ -41,9 +41,16 @@ public class Example07Lab {
 		printCollection("c1, c2 교집합", c3);
 		
 		c3.clear();
+		for(String s:c1){
+			c3.add(s);
+			if(c2.contains(s)==true) c3.remove(s);
+		}
+		printCollection("c1, c2 차집합 - 1", c3);
+		
+		c3.clear();
 		for(String s:c1)
 			if(c2.contains(s)==false) c3.add(s);
-		printCollection("c1, c2 차집합", c3);
+		printCollection("c1, c2 차집합 - 2", c3);
 		
 		c3.clear();
 		for(String s:c2)
