@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<body>
+    <div id="welcome"></div>
+    <input type="button" value="checking..." id="authBtn" onclick="
+        if(this.value === 'Login'){
+            FB.login(function(response) {
+                alert('Welcome');
+                location.reload();
+            }, {scope: 'public_profile,email'}); 
+        }else{
+            FB.logout(function(response) {
+                location.reload();
+            });
+        }
+    ">
+    <script>
+        window.fbAsyncInit = function() {
+            console.log('fbAsyncInit');
+            FB.init({
+                appId            : '{my-app-id}',
+                autoLogAppEvents : true,
+                xfbml            : true,
+                version          : 'v3.2'
+            });
+
+            // 로그인 상태를 체크해서 동작하는 함수 
+            FB.getLoginStatus(function(response) { 
+            console.log("response.state : "+response.status);
+            // statusChangeCallback(response);
+            if(response.status == 'connected'){
+                // 로그인되었을 때 처리 
+                document.querySelector('#authBtn').value = "Logout";
+                // Welcome message 출력 
+                FB.api(
+                    '/me/',
+                    'GET', 
+                    {"fields":"id,name,email"},
+                    function(response) {
+                        // Insert your code here
+                        console.log('API : ', response);
+                        document.querySelector('#welcome').innerHTML = 'Welcome, '+response.name;
+                    }
+                );
+            }else {
+                // 로그인되지 않았을 때 처리
+                document.querySelector('#authBtn').value = "Login";
+            }
+            })
+        };
+  
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+</body>
+</html>

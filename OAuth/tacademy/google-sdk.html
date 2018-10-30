@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <input type="button" value="checking..." id="authBtn" onclick="
+        var gauth = gapi.auth2.getAuthInstance(); // 아래에서 생성한 gauth 객체를 리턴해주는 싱글턴 객체 
+        if(this.value === 'Login'){ // 로그인이 되면
+            gauth.signIn().then(function(){ // 로그인이 완전히 끝났을 때 이 메소드를 호출 
+                alert('Logined');
+                location.reload();
+            });
+        }else{
+            gauth.signOut().then(function(){
+                alert('Logouted');
+                location.reload();
+            });
+        }
+    ">
+    <script>
+        function init() {
+            console.log('init');
+            gapi.load('auth2', function() { // oauth2가 로드된 후 실행되는 함수 
+                console.log('auth2 loaded');
+                var gauth = gapi.auth2.init({ // Auth setup, GoogleAuth object restores the user's sign-in state from the previous session.
+                    client_id: '{내가 생성한 프로젝트 id}'
+                });
+                gauth.then(function(){ // 성공한다면 앞의 파라매터, 실패한다면 뒤의 파라매터 호출 
+                    console.log('init success');
+                    var isLogined = gauth.isSignedIn.get();
+                    console.log('isLogined : ', isLogined);
+                    if(isLogined){
+                        // 로그인 됨
+                        document.querySelector('#authBtn').value = 'Logout';
+                    } else {
+                        // 로그인 안됨 
+                        document.querySelector('#authBtn').value = 'Login';
+                    }
+                }, function(){
+                    console.log('init fail');
+                }) 
+            });
+        }    
+    </script>
+    <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+</body>
+</html>

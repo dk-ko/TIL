@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <body>
+        <div id="welcome"></div>
+        <a href="https://www.facebook.com/v3.2/dialog/oauth?client_id=905199133201692&redirect_uri=https%3A%2F%2Flocalhost%3A8000%2Ffb-low.html&state=1234&response_type=token">Login with Facebook</a>
+        <script>
+            var atr=location.href.match('access_token=([^&]*)');
+            console.log('access token regular expression :', atr);
+            // 만약에 atr값이 있다면 > access token 추출 가능 
+            if(atr){
+                var access_token = atr[1];
+                console.log('access_token :', access_token);
+
+                fetch("https://graph.facebook.com/v3.2/me/?access_token={access_token_value}")
+                .then(function(raw){
+                    return raw.json();
+                })
+                .then(function(result){
+                    console.log(result.name, result.id);
+                    document.querySelector('#welcome').innerHTML = 'Welcome, '+result.name; 
+                    // #welcome : id값이 welcome인 태그를 선택. 
+                });
+ 
+            } else {
+
+            }
+            // 만약에 atr값이 없다면
+        </script>
+    </body>
+</html>
