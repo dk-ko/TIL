@@ -15,16 +15,6 @@ Today I Learned
 <br/>
 
 *****
-## Toys
-> 진행중 (\*) / 중단 (-)
-
-- [SpringBoot Webservice & deploy](https://github.com/koda93/spring-boot-webservice)  
-- [SpringBoot/MyBatis Meeting Site](https://github.com/koda93/Itda)  
-- [ChatServer with Netty](https://github.com/koda93/ChatServerWithNetty)  
-- [SpringBoot Journal App](https://github.com/koda93/spring-boot-journal) (-)  
-- [DJango SKHU Alumni Site](https://github.com/koda93/2016-dbproject)
-
-*****
 
 ## Architecture
 > 2018.11 ~ 진행 중
