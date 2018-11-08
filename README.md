@@ -1,12 +1,38 @@
 # TIL
 Today I Learned
 
+<br/>
+
 *****
+## Toys
+
+- [SpringBoot Webservice & deploy](https://github.com/koda93/spring-boot-webservice)  
+- [SpringBoot/MyBatis Meeting Site](https://github.com/koda93/Itda)  
+- [ChatServer with Netty](https://github.com/koda93/ChatServerWithNetty)  
+- [SpringBoot Journal App](https://github.com/koda93/spring-boot-journal)  
+- [DJango SKHU Alumni Site](https://github.com/koda93/2016-dbproject)
+
+<br/>
+
+*****
+
+## Architecture
+> 2018.11 ~ 진행 중
+
+- Domain Driven Design   
+
 
 ## Design Pattern
 > 2018.10 ~ 진행 중
 
 - Factory Pattern
+
+
+## ORM
+> 2018.9 ~  진행 중
+
+- [JPA-Study](https://github.com/koda93/jpa-study.git)
+
 
 ## Authorization
 > 2018.9 ~ 진행 중
@@ -14,14 +40,6 @@ Today I Learned
 - [Cookie & Authorization](https://opentutorials.org/course/3387)
 - [Session & Authorization](https://opentutorials.org/course/3400)
 - [Tacademy Seminar OAuth2](https://koda93.github.io/토크ON세미나-oauth2/)
-
-## WEB
-> 2018.9 ~  진행 중
-
-- [SpringBoot Webservice](https://github.com/koda93/spring-boot-webservice)
-- [JPA-Study](https://github.com/koda93/jpa-study.git)
-
-
 
 
 ## Junit
@@ -70,6 +88,10 @@ Today I Learned
 - Input Form
 - JDBC (MySQL)
 
+## WEB
+> 2018.1
+
+- [생활코딩 WEB1 - HTML & CSS](https://github.com/koda93/web1)
 
 ## Java  
 > 2018.1 ~ 2018.2  
@@ -77,4 +99,4 @@ Today I Learned
 
 - 연습 코드
 - 2018-2 SKHU Java Project
-- Effective Java
+- [Effective Java](https://koda93.github.io/tags/#Effective%20Java)
