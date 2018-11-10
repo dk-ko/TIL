@@ -15,22 +15,6 @@ Today I Learned
 <br/>
 
 *****
-## Toys
-> 진행중 (\*) / 중단 (-)
-
-- [SpringBoot Webservice & deploy](https://github.com/koda93/spring-boot-webservice)  
-- [SpringBoot/MyBatis Meeting Site](https://github.com/koda93/Itda)  
-- [ChatServer with Netty](https://github.com/koda93/ChatServerWithNetty)  
-- [SpringBoot Journal App](https://github.com/koda93/spring-boot-journal) (-)  
-- [DJango SKHU Alumni Site](https://github.com/koda93/2016-dbproject)
-
-*****
-
-## Architecture
-> 2018.11 ~ 진행 중
-
-- Domain Driven Design (예정)
-
 
 ## Architecture
 > 2018.11 ~ 진행 중
@@ -68,7 +52,7 @@ Today I Learned
 ## Javascript  
 > 2018.8 ~ 2018.10
 
-- [생활 코딩](https://opentutorials.org/course/3085) 연습 코드
+- [생활 코딩 WEB2 - JavaScript](https://opentutorials.org/course/3085)
 - Calculator
 
 

@@ -39,7 +39,7 @@ public class SortLab {
 		print(s);
 		
 		System.out.println();
-		// (3)Comparable Interface를 implements 하지 않은 경우
+		// (3) 기본적으로 Comparable Interface를 implements 하지 않은 경우
 		// (3)-1 Comparable Interface 이용 
 		Fruit[] fruits = new Fruit[count];
 		for(int i=0; i<count; i++)
@@ -57,7 +57,7 @@ public class SortLab {
 		
 		System.out.println();
 		// (3)-2-2 Comparator Class & enum 이용 
-		FruitComparator2 cp2 = new FruitComparator2(Compare.BY_NAME_DESC);
+		FruitComparator2 cp2 = new FruitComparator2(Compare.BY_PRICE_ASC);
 		print(fruits);
 		Arrays.sort(fruits, cp2);
 		print(fruits);
