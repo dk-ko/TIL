@@ -6,7 +6,7 @@ Today I Learned
 *****
 ## Toys
 
-- [SpringBoot Webservice & deploy](https://github.com/koda93/spring-boot-webservice)  
+- [SpringBoot Webservice & Deploy](https://github.com/koda93/spring-boot-webservice)  
 - [SpringBoot/MyBatis Meeting Site](https://github.com/koda93/Itda)  
 - [ChatServer with Netty](https://github.com/koda93/ChatServerWithNetty)  
 - [SpringBoot Journal App](https://github.com/koda93/spring-boot-journal)  
