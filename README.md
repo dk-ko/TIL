@@ -6,96 +6,67 @@ Today I Learned
 *****
 ## Toys
 
-- [SpringBoot Webservice & Deploy](https://github.com/koda93/springboot-deploy)  
-- [SpringBoot/MyBatis Meeting Site](https://github.com/koda93/Itda)  
-- [ChatServer with Netty](https://github.com/koda93/ChatServerWithNetty)    
-- [DJango SKHU Alumni Site](https://github.com/koda93/2016-dbproject)
+- [DJango SKHU Alumni Site](https://github.com/kodakyung/2016-dbproject)
 
 <br/>
 
 *****
 
-## Architecture
-> 2018.11 ~ 진행 중
+## Studying
+### Spring  
+- [Spring Cloud Config](https://github.com/kodakyung/spring-cloud-config)
+- [Spring REST API](https://github.com/kodakyung/springboot-restapi)
+- [SpringBoot Practice](https://github.com/kodakyung/springboot-practice)
+- [SpringBoot OAuth](https://github.com/kodakyung/springboot-oauth)
+- [SpringBoot File](https://github.com/kodakyung/springboot-file)
+- [SpringBoot Deploy](https://github.com/kodakyung/springboot-deploy)
+- File Upload / Download
+- Spring Security Basic
+- Spring Form
+- Spring Boot & JPA
+- Spring Boot & MyBatis
 
+### NodeJS
+- [Node Practice](https://github.com/kodakyung/node-practice)
+
+### Architecture
 - Domain Driven Design   
 
-
-## Design Pattern
-> 2018.10 ~ 진행 중
-
+### Design Pattern
 - Factory Pattern
 
+### ORM
+- [JPA-Study](https://github.com/kodakyung/jpa-study)
 
-## ORM
-> 2018.9 ~  진행 중
-
-- [JPA-Study](https://github.com/koda93/jpa-study.git)
-
-
-## Authorization
-> 2018.9 ~ 진행 중
-
+### Authorization
 - [Cookie & Authorization](https://opentutorials.org/course/3387)
 - [Session & Authorization](https://opentutorials.org/course/3400)
-- [Tacademy Seminar OAuth2](https://koda93.github.io/토크ON세미나-oauth2/)
+- [Tacademy Seminar OAuth2](https://kodakyung.github.io/토크ON세미나-oauth2/)
 
 
-## Junit
-> 2018.9 ~ 진행 중
-
+### Junit
 - CalculatorTest
 - StringCalculatorTest & Refactoring
 
-
-## Javascript  
-> 2018.8 ~ 2018.10
-
+### Javascript  
 - [생활 코딩 WEB2 - JavaScript](https://opentutorials.org/course/3085)
 - Calculator
 
-
-## Docker  
-> 2018.7 ~ 진행 중
-
+### Docker  
 - Dockerfile
 - Docker Monitoring
 
-
-## Netty  
-> 2018.5 ~ 2018.6
-
+### Netty  
+- [ChatServer with Netty](https://github.com/kodakyung/ChatServerWithNetty)    
 - echo-server
 - echo-client
 - NettyNioServer
 - NettyOioServer
 
-
-## Spring  
-> 2018.3 ~ 2018.5
-
-- Spring Boot & MyBatis
-- Spring Boot & JPA
-- Spring Form
-- Spring Security
-- File Upload / Download
-
-
 ## JSP  
-> 2018.2 ~ 2018.3
-
 - Input Form
 - JDBC (MySQL)
 
-## WEB
-> 2018.1
-
-- [생활코딩 WEB1 - HTML & CSS](https://github.com/koda93/web1)
-
 ## Java  
-> 2018.1 ~ 2018.2  
-> 2018.9 ~ 진행 중
-
-- 연습 코드
 - 2018-2 SKHU Java Project
-- [Effective Java](https://koda93.github.io/tags/#Effective%20Java)
+- [Effective Java](https://kodakyung.github.io/tags/#Effective%20Java)
