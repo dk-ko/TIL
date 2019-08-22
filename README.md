@@ -26,9 +26,6 @@ Today I Learned
 - Spring Boot & JPA
 - Spring Boot & MyBatis
 
-### NodeJS
-- [Node Practice](https://github.com/kodakyung/node-practice)
-
 ### Architecture
 - Domain Driven Design   
 
@@ -41,7 +38,7 @@ Today I Learned
 ### Authorization
 - [Cookie & Authorization](https://opentutorials.org/course/3387)
 - [Session & Authorization](https://opentutorials.org/course/3400)
-- [Tacademy Seminar OAuth2](https://kodakyung.github.io/토크ON세미나-oauth2/)
+- [Tacademy Seminar OAuth2](https://kodakyung.github.io/2018/10/24/old-post-Security-2018-10-24-토크ON세미나-oauth2/)
 
 
 ### Junit
@@ -65,8 +62,8 @@ Today I Learned
 
 ## JSP  
 - Input Form
-- JDBC (MySQL)
+- JDBC
 
 ## Java  
 - 2018-2 SKHU Java Project
-- [Effective Java](https://kodakyung.github.io/tags/#Effective%20Java)
+- [Effective Java](https://kodakyung.github.io/tags/Effective-Java/)
