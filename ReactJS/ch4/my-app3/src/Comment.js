@@ -46,14 +46,14 @@ class Comment extends React.Component { // Class Component
                 </div>
                 <div style={styles.commentContainer}>
                     <div style={styles.nameText}>
-                        {'Jade Ko'}
+                        {this.props.name}
                     </div>
                     <span style={styles.contentText}>
-                        {'My comment!'}
+                        {this.props.content}
                     </span>
                 </div>
             </div>
-        )
+        ) // comment가 props를 받도록 수정 
     }
 }
 
